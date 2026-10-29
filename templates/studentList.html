@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>List Students from table</title>
+</head>
+<body>
+    <h1>List Students from table</h1>
+    
+    <p><b>流水號 &nbsp;&nbsp; 學號 &nbsp;&nbsp; 姓名</b></p>
+
+    {% for s in students %}
+        <div>
+            {{ loop.index }}: 
+            <a href="/student/edit/{{ s.stuid }}">Edit</a> 
+            {{ s.stuid }} 
+            {{ s.name }} 
+            <a href="/student/delete/{{ s.stuid }}">X</a>
+        </div>
+    {% endfor %}
+
+    <br>
+    <a href="/student/add">新增學生</a>
+</body>
+</html>
